@@ -1,5 +1,13 @@
 # koishi-plugin-adapter-napuketto
 
+## 0.0.32
+
+### Patch Changes
+
+- Updated dependencies [524e5dc]
+  - @napuketto/adapter@0.3.0
+  - @napuketto/loader@0.0.32
+
 ## 0.0.31
 
 ### Patch Changes
