@@ -48,7 +48,7 @@
     "dependencies": {
         "@koishijs/client": "^5.29.4",
         "@koishijs/plugin-console": "^5.30.11",
-        "@napuketto/adapter": "~0.3.0",
+        "@napuketto/adapter": "~0.3.1",
         "@napuketto/kernel": "~0.1.1",
         "@napuketto/loader": "~0.0.32",
         "@napuketto/media": "~0.0.2",
