@@ -97,11 +97,14 @@ describe("resolveLaunchOptions", () => {
     });
 
     it("dataDir 覆盖数据根", async () => {
-        const options = await resolveLaunchOptions(makeConfig({ dataDir: "C:/data" }), {
+        // 绝对路径按平台取：Linux 上 "C:/data" 是相对路径语义（posix resolve 拼
+        // cwd），数据根契约本就要求当前平台路径（WSL 必须 ext4，见 launch.ts）
+        const dataDir = process.platform === "win32" ? "C:/data" : "/tmp/napuketto-data";
+        const options = await resolveLaunchOptions(makeConfig({ dataDir }), {
             resolveQq: fakeResolveQq,
         });
-        expect(options.cwd.replaceAll("\\", "/")).toBe("C:/data");
-        expect(options.cfgDir.replaceAll("\\", "/")).toBe("C:/data/123456789");
+        expect(options.cwd.replaceAll("\\", "/")).toBe(dataDir);
+        expect(options.cfgDir.replaceAll("\\", "/")).toBe(`${dataDir}/123456789`);
     });
 
     it("OB11 动作桥入口：缺省解析依赖（ob11Actions 默认开）", async () => {
