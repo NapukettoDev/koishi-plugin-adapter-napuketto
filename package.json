@@ -50,7 +50,7 @@
         "@koishijs/plugin-console": "^5.30.11",
         "@napuketto/adapter": "~0.3.1",
         "@napuketto/kernel": "~0.1.1",
-        "@napuketto/loader": "~0.0.32",
+        "@napuketto/loader": "~0.0.34",
         "@napuketto/media": "~0.0.2",
         "@napuketto/network": "~0.0.2"
     },
